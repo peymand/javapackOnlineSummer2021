@@ -43,14 +43,6 @@ public class StudetORMData {
             session.getTransaction().commit();
             session.close();
 
-//        Class.forName("com.mysql.cj.jdbc.Driver");
-//
-//        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","123456");
-//        PreparedStatement ps = connection.prepareStatement("INSERT INTO student_tlb (college, first_name, last_name) VALUES (?, ?, ?)");
-//        ps.setString(2,student.getName());
-//        ps.setString(3,student.getFamily());
-//        ps.setString(1,student.getCollege());
-//        ps.executeUpdate();
 
     }
 
