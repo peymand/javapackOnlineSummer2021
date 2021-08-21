@@ -1,12 +1,10 @@
 package com.kahkeshan.data;
 
-import com.kahkeshan.ui.models.Student;
+import com.kahkeshan.data.entities.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class StudetORMData {

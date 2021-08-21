@@ -1,11 +1,10 @@
 package com.kahkeshan.data;
 
-import com.kahkeshan.ui.models.Student;
+import com.kahkeshan.data.entities.Student;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 
 public class StudentData {
 
@@ -32,7 +31,7 @@ public class StudentData {
         List<Student> students = new ArrayList<>();
 
         while (rs.next()){
-            Student student = new Student(rs.getString(2),rs.getString(3),rs.getString(1));
+            Student student = new Student(rs.getString(2),rs.getString(3),rs.getString(1), profile);
             students.add(student);
         }
 

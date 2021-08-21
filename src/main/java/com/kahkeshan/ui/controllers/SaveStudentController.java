@@ -1,8 +1,8 @@
 package com.kahkeshan.ui.controllers;
 
 import com.kahkeshan.biz.StudentService;
-import com.kahkeshan.ui.models.Student;
-import org.hibernate.SessionFactory;
+import com.kahkeshan.data.entities.Student;
+import com.kahkeshan.ui.models.StudentDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +19,7 @@ public class SaveStudentController  extends HttpServlet {
         String name =  req.getParameter("name");
         String family =  req.getParameter("family");
         String college =  req.getParameter("college");
-        Student student = new Student(name,family,college);
+        StudentDTO student = new StudentDTO(name,family,college);
         StudentService service = new StudentService();
        try {
 

@@ -1,7 +1,8 @@
 package com.kahkeshan.ui.controllers;
 
 import com.kahkeshan.biz.StudentService;
-import com.kahkeshan.ui.models.Student;
+import com.kahkeshan.data.entities.Student;
+import com.kahkeshan.ui.models.StudentDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +19,7 @@ public class StudentListController extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         StudentService service = new StudentService();
         try {
-            List<Student> students =  service.getAll();
+            List<StudentDTO> students =  service.getAll();
             req.setAttribute("allSts", students);
             req.getRequestDispatcher("/WEB-INF/list.jsp").forward(req,resp);
 

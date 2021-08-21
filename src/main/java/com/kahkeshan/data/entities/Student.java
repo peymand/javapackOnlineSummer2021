@@ -1,7 +1,8 @@
-package com.kahkeshan.ui.models;
+package com.kahkeshan.data.entities;
+
+
 
 import javax.persistence.*;
-import java.lang.annotation.Target;
 
 @Entity
 @Table(name = "TBL_STUDENT")
@@ -18,14 +19,24 @@ public class Student {
     private String family;
     private String college;
 
-    @Transient
-    private String dummy;
+    private String passCode;
 
-    public Student(String name, String family, String college) {
+    @OneToOne
+    @JoinColumn(name = "profile_fk")
+    private Profile profile;
+
+    public Student(String name, String family, String college, Profile profile) {
         this.name = name;
         this.family = family;
         this.college = college;
+        this.profile = profile;
     }
+
+    @PrePersist
+    public void generatePassCode(){
+        this.passCode = "12345";
+    }
+
 
     public String getName() {
         return name;
@@ -57,5 +68,21 @@ public class Student {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getPassCode() {
+        return passCode;
+    }
+
+    public void setPassCode(String passCode) {
+        this.passCode = passCode;
+    }
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
     }
 }

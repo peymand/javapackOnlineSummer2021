@@ -1,6 +1,6 @@
 package com.kahkeshan.ui.controllers;
 
-import com.kahkeshan.ui.models.Student;
+import com.kahkeshan.data.entities.Student;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
