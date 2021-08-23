@@ -1,7 +1,11 @@
 package com.kahkeshan.ui.controllers;
 
 import com.kahkeshan.biz.StudentService;
+import com.kahkeshan.conf.SpringContextConfig;
+import com.kahkeshan.listeners.ContextListener;
 import com.kahkeshan.ui.models.StudentDTO;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +24,8 @@ public class SaveStudentController  extends HttpServlet {
         String college =  req.getParameter("college");
         StudentDTO student = new StudentDTO(name,family,college, null);
 
-        StudentService service = new StudentService();
+
+        StudentService service = (StudentService) ContextListener.ap.getBean("studentService");
        try {
 
             service.save(student);

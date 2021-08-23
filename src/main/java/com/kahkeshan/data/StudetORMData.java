@@ -5,12 +5,18 @@ import com.kahkeshan.data.entities.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+@Repository
+@Transactional
 public class StudetORMData {
 
 
+    @Autowired
     private SessionFactory sessionFactory;
 
     public SessionFactory getSessionFactory() {
@@ -22,26 +28,12 @@ public class StudetORMData {
     }
 
     public StudetORMData(){
-
-        sessionFactory = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Student.class)
-                .addAnnotatedClass(Profile.class)
-                .buildSessionFactory();
-
         //Builder Pattern
     }
 
 
     public void save(Student student) throws Exception{
-
-            Session session =  sessionFactory.getCurrentSession();
-            session.beginTransaction();
-            session.save(student);
-            session.getTransaction().commit();
-            session.close();
-
-
+            sessionFactory.getCurrentSession().save(student);
     }
 
     public Student get(int id) throws Exception {

@@ -2,8 +2,9 @@ package com.kahkeshan.ui.models;
 
 import com.kahkeshan.data.entities.Profile;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class StudentDTO {
 
     public String getName() {
@@ -52,6 +53,9 @@ public class StudentDTO {
         this.college = college;
     }
 
+
+    public StudentDTO() {
+    }
 
     public void doSomething(){
 
