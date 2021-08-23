@@ -21,7 +21,7 @@ public class Student {
 
     private String passCode;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profile_fk")
     private Profile profile;
 
@@ -30,6 +30,9 @@ public class Student {
         this.family = family;
         this.college = college;
         this.profile = profile;
+    }
+
+    public Student() {
     }
 
     @PrePersist

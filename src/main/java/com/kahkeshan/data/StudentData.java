@@ -31,7 +31,7 @@ public class StudentData {
         List<Student> students = new ArrayList<>();
 
         while (rs.next()){
-            Student student = new Student(rs.getString(2),rs.getString(3),rs.getString(1), profile);
+            Student student = new Student(rs.getString(2),rs.getString(3),rs.getString(1), null);
             students.add(student);
         }
 

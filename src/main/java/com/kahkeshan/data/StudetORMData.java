@@ -1,5 +1,6 @@
 package com.kahkeshan.data;
 
+import com.kahkeshan.data.entities.Profile;
 import com.kahkeshan.data.entities.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -25,6 +26,7 @@ public class StudetORMData {
         sessionFactory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Student.class)
+                .addAnnotatedClass(Profile.class)
                 .buildSessionFactory();
 
         //Builder Pattern
@@ -33,11 +35,9 @@ public class StudetORMData {
 
     public void save(Student student) throws Exception{
 
-
-
             Session session =  sessionFactory.getCurrentSession();
             session.beginTransaction();
-            session.saveOrUpdate(student);
+            session.save(student);
             session.getTransaction().commit();
             session.close();
 

@@ -9,10 +9,10 @@ import org.modelmapper.config.Configuration;
 import java.util.List;
 
 public class StudentService {
-
+        StudetORMData data = new StudetORMData();
 
     public void save(StudentDTO studentDto) throws Exception{
-        StudetORMData data = new StudetORMData();
+
 
         //mapping  StudentDTO ----> Student
 

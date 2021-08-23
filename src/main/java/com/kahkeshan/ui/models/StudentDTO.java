@@ -1,9 +1,8 @@
 package com.kahkeshan.ui.models;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.kahkeshan.data.entities.Profile;
+import org.springframework.beans.factory.annotation.Value;
+
 
 public class StudentDTO {
 
@@ -31,16 +30,19 @@ public class StudentDTO {
         this.college = college;
     }
 
+
     private int id;
     private String name;
     private String family;
     private String college;
+    private Profile profile;
 
 
-    public StudentDTO(String name, String family, String college) {
+    public StudentDTO(String name, String family, String college, Profile profile) {
         this.name = name;
         this.family = family;
         this.college = college;
+        this.profile = profile;
     }
 
     public StudentDTO(int id, String name, String family, String college) {
@@ -50,9 +52,10 @@ public class StudentDTO {
         this.college = college;
     }
 
-    public StudentDTO() {
-    }
 
+    public void doSomething(){
+
+    }
 
     public int getId() {
         return id;
@@ -60,5 +63,18 @@ public class StudentDTO {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("[ %d %s %s %s ]",id,name,family,college);
     }
 }
