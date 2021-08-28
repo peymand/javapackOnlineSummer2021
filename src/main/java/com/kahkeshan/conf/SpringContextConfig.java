@@ -17,9 +17,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-@Configuration
-@ComponentScan("com.kahkeshan")
-@EnableTransactionManagement
+//@Configuration
+//@ComponentScan("com.kahkeshan")
+//@EnableTransactionManagement
 public class SpringContextConfig {
 
     @Bean("sf")

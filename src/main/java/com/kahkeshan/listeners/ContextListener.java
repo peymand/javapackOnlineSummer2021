@@ -9,12 +9,12 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-@WebListener
+
 public class ContextListener implements ServletContextListener {
-    public static ApplicationContext ap;
-    static {
-          ap = new AnnotationConfigApplicationContext(SpringContextConfig.class);
-    }
+//    public static ApplicationContext ap;
+//    static {
+//          ap = new AnnotationConfigApplicationContext(SpringContextConfig.class);
+//    }
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {

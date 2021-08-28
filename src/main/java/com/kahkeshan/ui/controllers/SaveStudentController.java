@@ -25,10 +25,10 @@ public class SaveStudentController  extends HttpServlet {
         StudentDTO student = new StudentDTO(name,family,college, null);
 
 
-        StudentService service = (StudentService) ContextListener.ap.getBean("studentService");
+//        StudentService service = (StudentService) ContextListener.ap.getBean("studentService");
        try {
 
-            service.save(student);
+//            service.save(student);
             resp.sendRedirect("/home.jsp");
         }catch (Exception e){
             resp.sendRedirect("/error.jsp");

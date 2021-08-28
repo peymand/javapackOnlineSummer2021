@@ -14,7 +14,7 @@
 <body>
     welcome ${name}! <br/>
 
-    <a href="/register.do">Register</a> <br/>
+    <a href="/register.mvc">Register</a> <br/>
     <a href="/list.do">List of Registration</a> <br/>
 
     <c:if test="${role == 'admin'}">

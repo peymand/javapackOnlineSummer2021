@@ -10,7 +10,7 @@
 <h2>Welcome to Student Site!!!</h2>
 
 Online Users: <p id="onlineUsers"><%= CustomSessionListener.counter %></p>
-<form action="/login.do" method="post">
+<form action="/login.mvc" method="post">
     Name: <input type="text" name="name"/> <br/>
     Role: <input type="text" name="role"/> <br/>
     <input type="submit" value="login"/>

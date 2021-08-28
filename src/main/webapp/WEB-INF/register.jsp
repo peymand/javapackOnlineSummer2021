@@ -13,7 +13,7 @@
 <body>
     Hi, ${name}!
     This is registration page! <br/>  <br/>
-    <form method="post" action="/save-student.do">
+    <form method="post" action="/save-student.mvc">
 
         Name: <input type="text" name="name"/> <br/> <br/>
         Family: <input type="text" name="family"/> <br/> <br/>

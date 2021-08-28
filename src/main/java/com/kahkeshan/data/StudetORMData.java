@@ -33,7 +33,9 @@ public class StudetORMData {
 
 
     public void save(Student student) throws Exception{
+//            sessionFactory.getCurrentSession().getTransaction().begin();
             sessionFactory.getCurrentSession().save(student);
+//            sessionFactory.getCurrentSession().getTransaction().commit();
     }
 
     public Student get(int id) throws Exception {

@@ -18,15 +18,15 @@ public class StudentListController extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        StudentService service = (StudentService) ContextListener.ap.getBean("studentService");
-        try {
-            List<StudentDTO> students =  service.getAll();
-            req.setAttribute("allSts", students);
-            req.getRequestDispatcher("/WEB-INF/list.jsp").forward(req,resp);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            resp.sendRedirect("/error.jsp");
-        }
+//        StudentService service = (StudentService) ContextListener.ap.getBean("studentService");
+//        try {
+//            List<StudentDTO> students =  service.getAll();
+//            req.setAttribute("allSts", students);
+//            req.getRequestDispatcher("/WEB-INF/list.jsp").forward(req,resp);
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            resp.sendRedirect("/error.jsp");
+//        }
     }
 }
